@@ -1,0 +1,36 @@
+<div class="main">
+  <div class="row">
+    <div class="column">
+      <div class="product">
+        <div class="productImage">
+          <img [src]="product.url" />
+          <div class="productDetails">
+            <h3 class="productName">{{product.name}}</h3>
+            <h2 class="productPrice">${{product.price | number:'1.2'}}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="orderFormBox">
+        <div class="orderForm">
+          <h3 class="orderFormTitle">Angular Order Form</h3>
+          <div class="input">
+            <label>User's Email</label>
+            <div class="orderInput">
+              <input type="text" name="email" [value]="getEmail()" readonly="true" />
+            </div>
+          </div>
+          <div class="input">
+            <label>User's Plan</label>
+            <div class="orderInput">
+              <input type="text" name="plan" [value]="getPlan()" readonly="true" />
+            </div>
+          </div>
+          <button class="orderButton" type="button" (click)="onPlaceOrderClick()" [disabled]="purchaseDisabled">Place
+            order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
