@@ -56,7 +56,6 @@ Here's how to set up and run the Spring Boot server app and the two UIs.
 ## Spring Boot
 
 1. Update the `ld.sdkkey` property in the `application.properties` file located in `src/main/resources`:
-   > `application.properties`
 
 ```bash
 ld.sdkkey = <Your SDK Key from LaunchDarkly Account settings>
@@ -80,7 +79,6 @@ ld.sdkkey = <Your SDK Key from LaunchDarkly Account settings>
 ```
 
 2. Update the `ldClientID` value in the `environment.ts` file located in `angular/src/environment`:
-   > `environment.ts`
 
 ```js
 export const environment = {
