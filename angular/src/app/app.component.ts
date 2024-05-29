@@ -7,7 +7,8 @@ const userContext = {
   kind: 'user',
   key: 'abc123',
   email: 'abc123@gmail.com',
-  plan: 'gold'
+  plan: 'gold',
+  framework: 'angular',
 };
 
 @Component({
@@ -18,19 +19,21 @@ const userContext = {
     ProductService,
     FlagService,
     { provide: 'ldClientID', useValue: environment.ldClientID },
-    { provide: 'ldContext', useValue: userContext }
-  ]
+    { provide: 'ldContext', useValue: userContext },
+  ],
 })
 export class AppComponent implements OnInit {
-  private readonly purchaseEnabledFlag: string = "enable-purchasing";
-  product: Product = { name: "", price: 0.00, url: "" };
+  private readonly purchaseEnabledFlag: string = 'enable-purchasing';
+  product: Product = { name: '', price: 0.0, url: '' };
   purchaseDisabled: boolean = true;
 
-  constructor(private flagService: FlagService, private productService: ProductService) {
-  }
+  constructor(
+    private flagService: FlagService,
+    private productService: ProductService
+  ) {}
 
   ngOnInit(): void {
-    this.flagService.getFlagValue(this.purchaseEnabledFlag).then(value => {
+    this.flagService.getFlagValue(this.purchaseEnabledFlag).then((value) => {
       this.purchaseDisabled = !value;
     });
 
@@ -39,7 +42,14 @@ export class AppComponent implements OnInit {
     });
 
     const randomProductId = [1, 2, 3, 4, 5][Math.floor(Math.random() * 5)];
-    this.productService.getProduct(randomProductId, userContext.key, userContext.plan, userContext.email).subscribe(product => this.product = product);
+    this.productService
+      .getProduct(
+        randomProductId,
+        userContext.key,
+        userContext.plan,
+        userContext.email
+      )
+      .subscribe((product) => (this.product = product));
   }
 
   getEmail() {
@@ -51,6 +61,8 @@ export class AppComponent implements OnInit {
   }
 
   onPlaceOrderClick() {
-    if (!this.purchaseDisabled) { alert('Thank you for your purchase.'); }
+    if (!this.purchaseDisabled) {
+      alert('Thank you for your purchase.');
+    }
   }
 }

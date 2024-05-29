@@ -8,14 +8,15 @@ import App from './App';
     kind: 'user',
     key: 'abc123',
     email: 'abc123@gmail.com',
-    plan: 'gold'
+    plan: 'gold',
+    framework: 'react'
   };
 
   const randomProductId = [1, 2, 3, 4, 5][Math.floor(Math.random() * 5)];
   const url = `http://localhost:8080/api/product/${randomProductId}?userKey=${context.key}&plan=${context.plan}&email=${context.email}`;
   const response = await fetch(url);
   const product = await response.json();
-  
+
   context.name = product.name;
   context.url = product.url;
   context.price = product.price;

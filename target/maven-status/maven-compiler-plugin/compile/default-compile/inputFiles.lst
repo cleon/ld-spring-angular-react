@@ -1,6 +1,6 @@
-/Users/chris/Documents/projects/dev/LaunchDarklyLabs/ld-spring-angular-react/src/main/java/com/launchdarkly/developer/LDSampleApp/model/ProductRepository.java
-/Users/chris/Documents/projects/dev/LaunchDarklyLabs/ld-spring-angular-react/src/main/java/com/launchdarkly/developer/LDSampleApp/LaunchDarklyConfiguration.java
-/Users/chris/Documents/projects/dev/LaunchDarklyLabs/ld-spring-angular-react/src/main/java/com/launchdarkly/developer/LDSampleApp/model/Product.java
-/Users/chris/Documents/projects/dev/LaunchDarklyLabs/ld-spring-angular-react/src/main/java/com/launchdarkly/developer/LDSampleApp/LdSampleAppApplication.java
-/Users/chris/Documents/projects/dev/LaunchDarklyLabs/ld-spring-angular-react/src/main/java/com/launchdarkly/developer/LDSampleApp/Initializer.java
-/Users/chris/Documents/projects/dev/LaunchDarklyLabs/ld-spring-angular-react/src/main/java/com/launchdarkly/developer/LDSampleApp/web/ProductController.java
+/Users/chris/Documents/projects/dev/ld-spring-angular-react/src/main/java/com/launchdarkly/developer/LDSampleApp/model/ProductRepository.java
+/Users/chris/Documents/projects/dev/ld-spring-angular-react/src/main/java/com/launchdarkly/developer/LDSampleApp/web/ProductController.java
+/Users/chris/Documents/projects/dev/ld-spring-angular-react/src/main/java/com/launchdarkly/developer/LDSampleApp/model/Product.java
+/Users/chris/Documents/projects/dev/ld-spring-angular-react/src/main/java/com/launchdarkly/developer/LDSampleApp/LdSampleAppApplication.java
+/Users/chris/Documents/projects/dev/ld-spring-angular-react/src/main/java/com/launchdarkly/developer/LDSampleApp/Initializer.java
+/Users/chris/Documents/projects/dev/ld-spring-angular-react/src/main/java/com/launchdarkly/developer/LDSampleApp/LaunchDarklyConfiguration.java
