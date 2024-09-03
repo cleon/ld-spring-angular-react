@@ -15,6 +15,7 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.function.Supplier;
+
 import java.time.Duration;
 
 @Configuration
@@ -29,8 +30,7 @@ public class LaunchDarklyConfiguration {
         @Bean(destroyMethod = "close")
         public LDClient client() {
                 var config = new LDConfig.Builder()
-                                // .events(Components.sendEvents().capacity(5000).flushInterval(Duration.ofSeconds(2)))
-                                .events(Components.noEvents())
+                                .events(Components.sendEvents().capacity(5000).flushInterval(Duration.ofSeconds(2)))
                                 .build();
                 return new LDClient(sdkKey, config);
         }

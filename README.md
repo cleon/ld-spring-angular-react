@@ -30,10 +30,10 @@ The "Place Order" button is enabled/disabled based on the value of the `enable-p
 
 The application requires two feature flags set up in LaunchDarkly:
 
-| Flag Key          | Tier    | Type    | Variations         |
-| ----------------- | ------- | ------- | ------------------ |
-| enable-purchasing | Browser | Boolean | true, false        |
-| discount-pricing  | Server  | Number  | 0.25, 0.5, 0.75, 1 |
+| Flag Key          | Tier    | Type    | Variations            |
+| ----------------- | ------- | ------- | --------------------- |
+| enable-purchasing | Browser | Boolean | true, false           |
+| discount-pricing  | Server  | Number  | 0, 0.25, 0.5, 0.75, 1 |
 
 The following attributes are available for configuring targeting rules on either flag:
 

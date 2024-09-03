@@ -55,10 +55,11 @@ class ProductController {
                 .set("name", product.getName())
                 .build();
         var context = LDContext.createMulti(userContext.get(), productContext);
-        var discountFlagValue = client.doubleVariation(DISCOUNT_PRICING_FLAG, context, 1);
-        var discount = new BigDecimal(discountFlagValue);
-        var discountedPrice = product.getPrice().multiply(discount).setScale(2, RoundingMode.HALF_UP);
-        product.setPrice(discountedPrice);
+        var discountFlagValue = client.doubleVariation(DISCOUNT_PRICING_FLAG, context, 0);
+        var discountPercent = new BigDecimal(discountFlagValue);
+        var discountAmount = product.getPrice().multiply(discountPercent).setScale(2, RoundingMode.HALF_UP);
+        var adjustedPrice = product.getPrice().subtract(discountAmount);
+        product.setPrice(adjustedPrice);
         return product;
     }
 }

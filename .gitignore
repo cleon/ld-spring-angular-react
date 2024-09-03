@@ -50,3 +50,8 @@ gradle-app.setting
 ## Miscellaneous
 ##############################
 *.log
+
+target/
+.idea/
+.DS_Store
+.fake
