@@ -9,9 +9,9 @@
 hs_err_pid*
 replay_pid*
 
+target/**/*
 target/
 .idea/
-.DS_Store
+**/.DS_Store
 .fake
 .vscode/*
-*.lst
