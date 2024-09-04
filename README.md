@@ -47,7 +47,13 @@ The following attributes are available for configuring targeting rules on either
 | product      | type      | The type of product being purchased           | `furniture`, `electronics`, `clothing`, `food`, `housewares` |
 | product      | price     | The original price of product being purchased | A numeric value                                              |
 
-> NOTE: Product attribute values are hard-coded on the server tier. User attributes are set in the UI. All attributes can be modified as needed.
+> NOTE: Product attribute values are hard-coded on the server tier.
+>
+> The `email` and `plan` User attributes can be set via querystring parameters like this:
+>
+> http://localhost:4200/?email=your_email_address&plan=yourPlan
+>
+> Otherwise, the hard-coded Default Value will be used when constructing the multi-context object.
 
 # Run the application
 
@@ -125,5 +131,7 @@ Browse to http://localhost:3000 to view the React Product Purchase Form.
 Try adding targeting rules to the `discount-pricing` flag to manipulate the Product's price. For example, set a rule to reduce the price by 50% for all Products priced over $100.
 
 You can also add rules to the `enable-purchasing` flag to govern the state of the "Place Order" button. For example, set a rule that disables purchasing of all `food` products priced under $50.
+
+> Don't forget you can set the user's email and plan attributes via querystring.
 
 Combine multiple attributes and conditions on one or both flags for even more toggling fun!

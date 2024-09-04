@@ -28,8 +28,6 @@ import lombok.Setter;
 @CrossOrigin(origins = { "http://localhost:4200", "http://localhost:3000" })
 class ProductController {
 
-    private static final String DISCOUNT_PRICING_FLAG = "discount-pricing";
-
     @Getter
     @Setter
     private LDClient client;
@@ -49,13 +47,14 @@ class ProductController {
     }
 
     private Product discountPrice(final Product product) {
+        final String discountPricingFlag = "discount-pricing";
         var productContext = LDContext.builder(ContextKind.of("product"), String.valueOf(product.getId()))
                 .set("type", product.getType())
                 .set("price", product.getPrice().doubleValue())
                 .set("name", product.getName())
                 .build();
         var context = LDContext.createMulti(userContext.get(), productContext);
-        var discountFlagValue = client.doubleVariation(DISCOUNT_PRICING_FLAG, context, 0);
+        var discountFlagValue = client.doubleVariation(discountPricingFlag, context, 0);
         var discountPercent = new BigDecimal(discountFlagValue);
         var discountAmount = product.getPrice().multiply(discountPercent).setScale(2, RoundingMode.HALF_UP);
         var adjustedPrice = product.getPrice().subtract(discountAmount);

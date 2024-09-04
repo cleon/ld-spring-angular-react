@@ -4,11 +4,16 @@ import { asyncWithLDProvider } from 'launchdarkly-react-client-sdk';
 import App from './App';
 
 (async () => {
+  const params = new URLSearchParams(window.location.search);
+  const userEmail = params.get('email') || 'abc123@gmail.com';
+  const userKey = userEmail;
+  const userPlan = params.get('plan') || 'gold';
+
   let context = {
     kind: 'user',
-    key: 'abc123',
-    email: 'abc123@gmail.com',
-    plan: 'gold',
+    key: userKey,
+    email: userEmail,
+    plan: userPlan,
     framework: 'react'
   };
 

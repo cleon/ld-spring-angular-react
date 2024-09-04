@@ -3,11 +3,16 @@ import { FlagService } from './flag.service';
 import { ProductService, Product } from './product.service';
 import { environment } from 'src/environment/environment';
 
+const params = new URLSearchParams(window.location.search);
+const userEmail = params.get('email') || 'abc123@gmail.com';
+const userKey = userEmail;
+const userPlan = params.get('plan') || 'gold';
+
 const userContext = {
   kind: 'user',
-  key: 'abc123',
-  email: 'abc123@gmail.com',
-  plan: 'gold',
+  key: userKey,
+  email: userEmail,
+  plan: userPlan,
   framework: 'angular',
 };
 
